@@ -1,5 +1,9 @@
 ## What Are Eigenvalues?
 
+To understand eigenvalues, you must first consider eigenvectors. When you apply a linear transformation (like a rotation or stretch) represented by a square matrix $A$ to a vector $v$, the vector usually changes its direction.However, for any square matrix, there exist special, non-zero vectors called eigenvectors that do not change their direction when the transformation is applied. Instead, these vectors are only scaled—stretched, shrunk, or flipped.
+- The Eigenvalue ($\lambda$): The scalar factor by which the eigenvector is scaled.
+- The Equation: This relationship is defined by the equation $Av = \lambda v$, where $A$ is the matrix, $v$ is the eigenvector, and $\lambda$ is the eigenvalue.
+
 An **eigenvalue** of a square matrix $A$ is a scalar $\lambda$ such that there exists a nonzero vector $v$ satisfying:
 
 $$
@@ -10,6 +14,18 @@ In words: when you multiply the matrix $A$ by the vector $v$, the result is just
 
 The vector $v$ is called an **eigenvector** corresponding to eigenvalue $\lambda$.
 
+## How are they used in Machine Learning?
+Eigenvalues and eigenvectors are "invisible gears" powering many machine learning techniques by helping us simplify and understand complex data.
+
+- Principal Component Analysis (PCA): This is perhaps the most prominent application. PCA uses the eigenvectors of a data's covariance matrix to identify the "principal components"—the directions in which the data varies the most. The corresponding eigenvalues tell you the amount of variance captured by each component, allowing you to reduce the dimensionality of your data while retaining the most important information.
+
+- Feature Selection and Noise Reduction: By analyzing eigenvalues, you can identify and discard features or components with low variance, which often represent noise rather than meaningful patterns.
+
+- Ranking and Clustering: Algorithms like Google's PageRank use eigenvectors and eigenvalues to rank the importance of items (like web pages) in a network. They are also used in spectral clustering to group data points by transforming them into a space where clustering becomes more manageable.
+
+- Model Stability: In dynamical systems and neural networks, eigenvalues help analyze the stability of a system—for example, determining whether gradients might "explode" or "vanish" during training.
+
+In essence, eigenvalues provide a way to summarize the properties of a large, complex matrix, distilling the "core" of the data or the transformation into a few meaningful scalars.
 ---
 
 ## Geometric Interpretation
